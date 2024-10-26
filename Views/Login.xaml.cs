@@ -3,7 +3,7 @@ namespace jdiazExamen.Views;
 public partial class Login : ContentPage
 {
     // Vectores de usuarios y contraseñas
-    private string[] users = { "estudiante2024", "examen1 ", "NombreEstudiante" };
+    private string[] users = { "estudiante2024", "examen1", "NombreEstudiante" };
     private string[] passwords = { "uisrael2024", "parcial1", "2024" };
     public Login()
 	{
@@ -45,6 +45,6 @@ public partial class Login : ContentPage
 
     private void Button_Clicked_1(object sender, EventArgs e)
     {
-        DisplayAlert("Acerca de", "Este programa fue desarrollado por Jonathan", "Cerrar");
+        DisplayAlert("Acerca de", "Este programa fue desarrollado por Jonathan Diaz", "Cerrar");
     }
 }

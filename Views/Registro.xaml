@@ -9,20 +9,22 @@
                HorizontalOptions="Center"
                FontSize="20"/>
 
-        <Label Text="REGISTRO"
-               HorizontalOptions="Center"
-               FontSize="22"
-               TextColor="Blue"/>
+        <Label  FontAttributes="Bold"
+                       FontFamily="bold"
+                       FontSize="20"
+                       Text="Registro"
+                       TextColor="red"
+                       HorizontalOptions="Center"/>
 
         <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, Auto, Auto">
             <Label Text="Nombre:" />
-            <Entry x:Name="nameEntry" Placeholder="Ingresar Nombre" Grid.Column="1"/>
+            <Entry x:Name="nameEntry" Placeholder="Ingresar Nombre" Grid.Row="0" Grid.Column="0"/>
 
             <Label Text="Apellido:" />
-            <Entry x:Name="surnameEntry" Placeholder="Ingresar Apellido" Grid.Column="1" Grid.Row="1"/>
+            <Entry x:Name="surnameEntry" Placeholder="Ingresar Apellido" Grid.Row="0" Grid.Column="1"/>
 
             <Label Text="Voltiamperio VA:" />
-            <Picker x:Name="vaPicker" Title="Seleccionar VA" Grid.Column="2" Grid.Row="0">
+            <Picker x:Name="vaPicker" Title="Voltiamperios VA"  Grid.Row="0" Grid.Column="3">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>500</x:String>
@@ -32,11 +34,11 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <Label Text="Fecha:" Grid.Row="1" />
-            <DatePicker x:Name="datePicker" Grid.Row="1" Grid.Column="0" />
+            <Label Text="Fecha:" Grid.Row="3" />
+            <DatePicker x:Name="datePicker" Grid.Row="4" Grid.Column="0" />
 
-            <Label Text="Ciudad:" />
-            <Picker x:Name="cityPicker" Grid.Column="2" Grid.Row="1" Title="Seleccionar Ciudad">
+            <Label Text="Ciudad:"  Grid.Row="4" Grid.Column="4"/>
+            <Picker x:Name="cityPicker" Grid.Column="2" Grid.Row="1">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Quto</x:String>
@@ -48,11 +50,33 @@
         </Grid>
 
         <Label Text="Monto Inicial:" />
-        <Entry x:Name="initialAmountEntry" Placeholder="Monto Inicial" IsReadOnly="True"/>
-
-        <Button Text="Calcular Pago mensual" Clicked="Button_Clicked"/>
-
+        <Entry x:Name="initialAmountEntry" 
+               Placeholder="Monto Inicial" 
+               IsReadOnly="True"/>
+        
         <Label Text="Cuota mensual:" />
         <Entry x:Name="monthlyPaymentEntry" IsReadOnly="True"/>
+
+        <Button Text="Calcular Pago mensual"
+                Margin="0,20,0,0"
+                BackgroundColor="#035896"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="16"
+                HeightRequest="50"
+                WidthRequest="350"
+                CornerRadius="30"
+                Clicked="Button_Clicked"/>
+        <Button x:Name="btnResumen"
+                Text="Resumen"
+                Margin="0,20,0,0"
+                BackgroundColor="#035896"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="16"
+                HeightRequest="50"
+                WidthRequest="350"
+                CornerRadius="30"
+                Clicked="btnResumen_Clicked"/>
     </StackLayout>
 </ContentPage>

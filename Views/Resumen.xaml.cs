@@ -20,4 +20,14 @@ public partial class Resumen : ContentPage
     {
 
     }
+
+    private void btnCerrarsesion_Clicked(object sender, EventArgs e)
+    {
+        // Mostrar un mensaje de bienvenida
+        DisplayAlert("Cerrar sesión", "has cerrado sesion con exito", "OK");
+
+        // Redirigir a la página vHome
+        Navigation.PushAsync(new Views.Registro());
+        Navigation.PopToRootAsync();
+    }
 }

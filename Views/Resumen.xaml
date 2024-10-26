@@ -41,6 +41,16 @@
             <Label Text="{Binding PagoTotal}" />
         </Grid>
 
-        <Button Text="Cerrar sesión" Clicked="Button_Clicked" />
+        <Button x:Name="btnCerrarsesion"
+                Text="Cerrar sesión"
+                Margin="0,20,0,0"
+                BackgroundColor="#035896"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="16"
+                HeightRequest="50"
+                WidthRequest="350"
+                CornerRadius="30"
+                Clicked="btnCerrarsesion_Clicked" />
     </StackLayout>
 </ContentPage>
