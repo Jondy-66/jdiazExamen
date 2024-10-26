@@ -2,11 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="jdiazExamen.Views.Registro"
-             Title="Registro"
              Padding="25">
     <StackLayout>
         <Label x:Name="lblDato"
-               Text="Usuario Conectado: {Binding Username1}"
                HorizontalOptions="EndAndExpand"
                FontSize="14"
                TextColor="#035896"/>
@@ -16,6 +14,7 @@
                        FontSize="20"
                        Text="Registro"
                        TextColor="red"
+                       Margin="0,0,0,30"
                        HorizontalOptions="Center"/>
 
         <Grid>

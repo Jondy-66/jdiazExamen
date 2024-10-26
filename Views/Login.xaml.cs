@@ -14,6 +14,7 @@ public partial class Login : ContentPage
     {
         string username = Username.Text;
         string password = Password.Text;
+        string dato = Username.Text;
 
         // Validar si el usuario y la contraseña son correctos
         bool isValid = false;
@@ -31,8 +32,8 @@ public partial class Login : ContentPage
             // Mostrar un mensaje de bienvenida
             DisplayAlert("Bienvenido", $"Hola {username}, has iniciado sesión con éxito.", "OK");
 
-            // Redirigir a la página vHome
-            Task task = Navigation.PushAsync(new Views.Registro());
+            // Redirigir a la página Registro
+            Navigation.PushAsync(new Registro(dato));
         }
         else
         {

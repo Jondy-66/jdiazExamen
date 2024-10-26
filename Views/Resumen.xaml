@@ -4,9 +4,10 @@
              x:Class="jdiazExamen.Views.Resumen"
              Padding="25">
     <StackLayout>
-        <Label Text="Usuario Conectado: {Binding Username}"
-               HorizontalOptions="Center"
-               FontSize="20"/>
+        <Label x:Name="lblDato"
+               HorizontalOptions="EndAndExpand"
+               FontSize="14"
+               TextColor="#035896"/>
 
         <Label Text="RESUMEN"
                HorizontalOptions="Center"

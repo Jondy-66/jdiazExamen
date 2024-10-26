@@ -1,23 +1,25 @@
 //using static System.Runtime.InteropServices.JavaScript.JSType;
 
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 namespace jdiazExamen.Views;
 
 public partial class Registro : ContentPage
 {
     // Costo total del UPS
-    private const double TotalCost = 300; 
-    public string Username { get; }
+    private const double TotalCost = 300;
+    string datoU;
+
     public Registro()
     {
 		InitializeComponent();
 
     }
-    public Registro(string username)
+    public Registro(string dato)
     {
         InitializeComponent();
-        Username = username;
-        // Vincular el contexto para mostrar el usuario
-        BindingContext = this; 
+        this.datoU = dato;
+        lblDato.Text = "usuario conectado:" + dato;
     }
 
     private void Button_Clicked(object sender, EventArgs e)

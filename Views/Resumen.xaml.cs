@@ -5,7 +5,7 @@ namespace jdiazExamen.Views;
 
 public partial class Resumen : ContentPage
 {
-    public string Username { get; }
+    public string datoU;
     public string Nombre { get; }
     public string Apellido { get; }
     public string VA { get; }
@@ -18,17 +18,16 @@ public partial class Resumen : ContentPage
 	{
 		InitializeComponent();
 	}
-    public Resumen(string username, string nombre, string apellido, string va, DateTime fecha, string ciudad, string montoInicial, string cuotaMensual)
+    public Resumen(string dato, string nombre, string apellido, string va, DateTime fecha, string ciudad, string montoInicial, string cuotaMensual)
     {
         InitializeComponent();
-        Username = username;
         // Vincular el contexto para mostrar el usuario
-        BindingContext = this;
+        this.datoU = dato;
+        lblDato.Text = "USUARIO CONECTADO" + dato;
 
         // Calcular el pago total
         double pagoTotal = double.Parse(montoInicial) + (double.Parse(cuotaMensual) * 3);
 
-        Username = username;
         Nombre = nombre;
         Apellido = apellido;
         VA = va;
@@ -40,6 +39,7 @@ public partial class Resumen : ContentPage
 
         BindingContext = this; // Establecer el contexto de datos
     }
+
     private void Button_Clicked(object sender, EventArgs e)
     {
 
@@ -51,7 +51,7 @@ public partial class Resumen : ContentPage
         DisplayAlert("Cerrar sesión", "has cerrado sesion con exito", "OK");
 
         // Redirigir a la página Registro
-        Navigation.PushAsync(new Views.Registro());
+        Navigation.PushAsync(new Views.Login());
         Navigation.PopToRootAsync();
     }
 }
