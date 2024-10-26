@@ -6,16 +6,16 @@ public partial class Registro : ContentPage
 {
     // Costo total del UPS
     private const double TotalCost = 300; 
-    public string Username1 { get; }
+    public string Username { get; }
     public Registro()
     {
 		InitializeComponent();
 
     }
-    public Registro(string username1)
+    public Registro(string username)
     {
         InitializeComponent();
-        Username1 = username1;
+        Username = username;
         // Vincular el contexto para mostrar el usuario
         BindingContext = this; 
     }

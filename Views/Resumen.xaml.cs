@@ -21,6 +21,9 @@ public partial class Resumen : ContentPage
     public Resumen(string username, string nombre, string apellido, string va, DateTime fecha, string ciudad, string montoInicial, string cuotaMensual)
     {
         InitializeComponent();
+        Username = username;
+        // Vincular el contexto para mostrar el usuario
+        BindingContext = this;
 
         // Calcular el pago total
         double pagoTotal = double.Parse(montoInicial) + (double.Parse(cuotaMensual) * 3);
