@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jdiazExamen.Views.Login">
+    <Grid RowDefinitions=".3* , .7*">
+        <Image Aspect="AspectFill" Source="cuidando.png"/>
+        <Grid BackgroundColor="#035896"/>
+        <Grid ColumnDefinitions="20*,*" >
+            <Image WidthRequest="350"
+                   Source="https://sbsconsulting.com.ec/wp-content/uploads/2018/01/LOGO-UISRAEL-768x209.png"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <RoundRectangle Margin="-5, -30, -5, -2"
+                            CornerRadius="30, 30, 0, 0"
+                            Fill="white"/>
+            <VerticalStackLayout Margin="30, 0, 30, 0">
+                <Label FontAttributes="Bold"
+                       FontFamily="bold"
+                       FontSize="30"
+                       Text="Inicio de Sesión"
+                       TextColor="red"
+                       HorizontalOptions="Center"/>
+                <Grid Margin="0, 30, 0, 0" ColumnDefinitions=".2*, .8*">
+                    <RoundRectangle
+                        BackgroundColor="White"
+                        CornerRadius="10"
+                        HeightRequest="60"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="60"/>
+                    <Image HorizontalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource
+                                FontFamily="AwesomeSolid"
+                                Glyph="&#xf0e0;"
+                                Size="44"
+                                Color="#035896"/>
+                        </Image.Source>
+                    </Image>
+                    <Entry Grid.Column="1"
+                           x:Name="Username"
+                           Placeholder="USUARIO"
+                           VerticalOptions="Center"/>
+                </Grid>
+                <Grid Margin="0, 30, 0, 0" ColumnDefinitions=".2*, .8*">
+                    <RoundRectangle
+                        BackgroundColor="White"
+                        CornerRadius="10"
+                        HeightRequest="60"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        WidthRequest="60"/>
+                    <Image HorizontalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource
+                                FontFamily="AwesomeSolid"
+                                Glyph="&#xf084;"
+                                Size="44"
+                                Color="#035896"/>
+                        </Image.Source>
+                    </Image>
+                    <Entry Grid.Column="1"
+                           x:Name="Password"
+                           Placeholder="PASSWORD"
+                           IsPassword="True"
+                           VerticalOptions="Center"/>
+                </Grid>
+                <Button
+                    Margin="0,20,0,0"
+                    BackgroundColor="#035896"
+                    Text="Iniciar Seción"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HeightRequest="50"
+                    WidthRequest="350"
+                    CornerRadius="30"
+                    Clicked="Button_Clicked"/>
+                <Button
+                    Margin="0,20,0,0"
+                    ImageSource="acercad.png"
+                    HeightRequest="50"
+                    WidthRequest="350"
+                    BackgroundColor="White"
+                    Clicked="Button_Clicked_1"/>
+                <Label Margin="0,5,0,-5"
+                       HorizontalOptions="Center"
+                       Text="Acerca de"
+                       TextColor="#035896"
+                       TextDecorations="Underline"/>
+                <Label Margin="0,30,0,0"
+                       HorizontalOptions="Center"
+                       Text="by Jona Diaz"  
+                       TextColor="#035896"/>
+
+            </VerticalStackLayout>
+
+        </Grid>
+    </Grid>
+</ContentPage>

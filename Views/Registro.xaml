@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jdiazExamen.Views.Registro"
+             Title="Registro"
+             Padding="25">
+    <StackLayout>
+        <Label Text="Usuario Conectado: {Binding Username}"
+               HorizontalOptions="Center"
+               FontSize="20"/>
+
+        <Label Text="REGISTRO"
+               HorizontalOptions="Center"
+               FontSize="22"
+               TextColor="Blue"/>
+
+        <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, Auto, Auto">
+            <Label Text="Nombre:" />
+            <Entry x:Name="nameEntry" Placeholder="Ingresar Nombre" Grid.Column="1"/>
+
+            <Label Text="Apellido:" />
+            <Entry x:Name="surnameEntry" Placeholder="Ingresar Apellido" Grid.Column="1" Grid.Row="1"/>
+
+            <Label Text="Voltiamperio VA:" />
+            <Picker x:Name="vaPicker" Title="Seleccionar VA" Grid.Column="2" Grid.Row="0">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>500</x:String>
+                        <x:String>750</x:String>
+                        <x:String>1000</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Fecha:" Grid.Row="1" />
+            <DatePicker x:Name="datePicker" Grid.Row="1" Grid.Column="0" />
+
+            <Label Text="Ciudad:" />
+            <Picker x:Name="cityPicker" Grid.Column="2" Grid.Row="1" Title="Seleccionar Ciudad">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Quto</x:String>
+                        <x:String>Cuenca</x:String>
+                        <x:String>Guayaquill</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </Grid>
+
+        <Label Text="Monto Inicial:" />
+        <Entry x:Name="initialAmountEntry" Placeholder="Monto Inicial" IsReadOnly="True"/>
+
+        <Button Text="Calcular Pago mensual" Clicked="Button_Clicked"/>
+
+        <Label Text="Cuota mensual:" />
+        <Entry x:Name="monthlyPaymentEntry" IsReadOnly="True"/>
+    </StackLayout>
+</ContentPage>

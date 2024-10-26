@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jdiazExamen.Views.Resumen"
+             Title="Resumen"
+             Padding="25">
+    <StackLayout>
+        <Label Text="Usuario Conectado: {Binding Username}"
+               HorizontalOptions="Center"
+               FontSize="20"/>
+
+        <Label Text="RESUMEN"
+               HorizontalOptions="Center"
+               FontSize="22"
+               TextColor="Blue"/>
+
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto" 
+              ColumnDefinitions="Auto, Auto">
+            <Label Text="Nombre:" />
+            <Label Text="{Binding Nombre}" />
+
+            <Label Text="Apellido:" />
+            <Label Text="{Binding Apellido}" />
+
+            <Label Text="VA:" />
+            <Label Text="{Binding VA}" />
+
+            <Label Text="Fecha:" />
+            <Label Text="{Binding Fecha}" />
+
+            <Label Text="Ciudad:" />
+            <Label Text="{Binding Cuidad}" />
+
+            <Label Text="Monto Inicial:" />
+            <Label Text="{Binding MontoInicial}" />
+
+            <Label Text="Cuota mensual:" />
+            <Label Text="{Binding CuatoMensual}" />
+
+            <Label Text="Pago Total:" />
+            <Label Text="{Binding PagoTotal}" />
+        </Grid>
+
+        <Button Text="Cerrar sesión" Clicked="Button_Clicked" />
+    </StackLayout>
+</ContentPage>
