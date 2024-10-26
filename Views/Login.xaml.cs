@@ -32,7 +32,7 @@ public partial class Login : ContentPage
             DisplayAlert("Bienvenido", $"Hola {username}, has iniciado sesión con éxito.", "OK");
 
             // Redirigir a la página vHome
-            Navigation.PushAsync(new Views.Registro());
+            Task task = Navigation.PushAsync(new Views.Registro());
         }
         else
         {

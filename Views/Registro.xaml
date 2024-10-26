@@ -5,9 +5,11 @@
              Title="Registro"
              Padding="25">
     <StackLayout>
-        <Label Text="Usuario Conectado: {Binding Username}"
-               HorizontalOptions="Center"
-               FontSize="20"/>
+        <Label x:Name="lblDato"
+               Text="Usuario Conectado: {Binding Username1}"
+               HorizontalOptions="EndAndExpand"
+               FontSize="14"
+               TextColor="#035896"/>
 
         <Label  FontAttributes="Bold"
                        FontFamily="bold"
@@ -16,15 +18,24 @@
                        TextColor="red"
                        HorizontalOptions="Center"/>
 
-        <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, Auto, Auto">
-            <Label Text="Nombre:" />
-            <Entry x:Name="nameEntry" Placeholder="Ingresar Nombre" Grid.Row="0" Grid.Column="0"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Text="Nombre" Grid.Row="0" Grid.Column="0"/>
+            <Entry x:Name="nameEntry" Placeholder="Nombre" Grid.Row="1" Grid.Column="0"/>
 
-            <Label Text="Apellido:" />
-            <Entry x:Name="surnameEntry" Placeholder="Ingresar Apellido" Grid.Row="0" Grid.Column="1"/>
+            <Label Text="Apellido:" Grid.Row="0" Grid.Column="1"/>
+            <Entry x:Name="surnameEntry" Placeholder="Apellido" Grid.Row="1" Grid.Column="1"/>
 
-            <Label Text="Voltiamperio VA:" />
-            <Picker x:Name="vaPicker" Title="Voltiamperios VA"  Grid.Row="0" Grid.Column="3">
+            <Label Text="Voltiamperio VA:" Grid.Row="0" Grid.Column="2"/>
+            <Picker x:Name="vaPicker" Grid.Row="1" Grid.Column="2">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>500</x:String>
@@ -33,13 +44,26 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
+        </Grid>
 
-            <Label Text="Fecha:" Grid.Row="3" />
-            <DatePicker x:Name="datePicker" Grid.Row="4" Grid.Column="0" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <Label Text="Ciudad:"  Grid.Row="4" Grid.Column="4"/>
-            <Picker x:Name="cityPicker" Grid.Column="2" Grid.Row="1">
-                <Picker.ItemsSource>
+            <Label Text="Fecha:" Grid.Row="0" Grid.Column="0"/>
+            <DatePicker x:Name="datePicker" Grid.Row="0" Grid.Column="1" />
+            
+            <Label Text="Ciudad:" Grid.Row="1" Grid.Column="0"/>
+            <Picker x:Name="cityPicker" Grid.Column="1" Grid.Row="1">
+                <Picker.ItemsSource >
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Quto</x:String>
                         <x:String>Cuenca</x:String>
@@ -47,29 +71,28 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-        </Grid>
 
-        <Label Text="Monto Inicial:" />
-        <Entry x:Name="initialAmountEntry" 
-               Placeholder="Monto Inicial" 
+            <Label Text="Monto Inicial:" Grid.Row="2" Grid.Column="0"/>
+            <Entry Grid.Row="2" Grid.Column="1" 
+               x:Name="initialAmountEntry" 
+               Placeholder="Ingrese Monto Inicial"
                IsReadOnly="True"/>
-        
-        <Label Text="Cuota mensual:" />
-        <Entry x:Name="monthlyPaymentEntry" IsReadOnly="True"/>
-
-        <Button Text="Calcular Pago mensual"
-                Margin="0,20,0,0"
+            <Button Grid.Row="3" Grid.Column="0"
+                x:Name="bntCalcularpagomensual"
+                Text="Calcular Pago mensual"
                 BackgroundColor="#035896"
                 TextColor="White"
                 FontAttributes="Bold"
                 FontSize="16"
-                HeightRequest="50"
-                WidthRequest="350"
                 CornerRadius="30"
                 Clicked="Button_Clicked"/>
-        <Button x:Name="btnResumen"
+            <Entry x:Name="monthlyPaymentEntry" IsReadOnly="True" Grid.Row="3"  Grid.Column="2"/>
+
+        </Grid>
+        <Button Grid.Column="3" Grid.Row="4"
+                x:Name="btnResumen"
                 Text="Resumen"
-                Margin="0,20,0,0"
+                Margin="0,50,0,0"
                 BackgroundColor="#035896"
                 TextColor="White"
                 FontAttributes="Bold"

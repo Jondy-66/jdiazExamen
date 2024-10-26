@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="jdiazExamen.Views.Resumen"
-             Title="Resumen"
              Padding="25">
     <StackLayout>
         <Label Text="Usuario Conectado: {Binding Username}"
@@ -14,36 +13,49 @@
                FontSize="22"
                TextColor="Blue"/>
 
-        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto" 
-              ColumnDefinitions="Auto, Auto">
-            <Label Text="Nombre:" />
-            <Label Text="{Binding Nombre}" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Text="Nombre:" Grid.Row="0" Grid.Column="0"/>
+            <Label Text="{Binding Nombre}"/>
 
-            <Label Text="Apellido:" />
+            <Label Text="Apellido:" Grid.Row="1" Grid.Column="0"/>
             <Label Text="{Binding Apellido}" />
 
-            <Label Text="VA:" />
+            <Label Text="VA:" Grid.Row="2" Grid.Column="0"/>
             <Label Text="{Binding VA}" />
 
-            <Label Text="Fecha:" />
+            <Label Text="Fecha:" Grid.Row="3" Grid.Column="0"/>
             <Label Text="{Binding Fecha}" />
 
-            <Label Text="Ciudad:" />
+            <Label Text="Ciudad:" Grid.Row="4" Grid.Column="0"/>
             <Label Text="{Binding Cuidad}" />
 
-            <Label Text="Monto Inicial:" />
+            <Label Text="Monto Inicial:" Grid.Row="5" Grid.Column="0"/>
             <Label Text="{Binding MontoInicial}" />
 
-            <Label Text="Cuota mensual:" />
+            <Label Text="Cuota mensual:" Grid.Row="6" Grid.Column="0"/>
             <Label Text="{Binding CuatoMensual}" />
 
-            <Label Text="Pago Total:" />
+            <Label Text="Pago Total:" Grid.Row="7" Grid.Column="0"/>
             <Label Text="{Binding PagoTotal}" />
         </Grid>
 
         <Button x:Name="btnCerrarsesion"
                 Text="Cerrar sesión"
-                Margin="0,20,0,0"
+                Margin="0,40,0,0"
                 BackgroundColor="#035896"
                 TextColor="White"
                 FontAttributes="Bold"
