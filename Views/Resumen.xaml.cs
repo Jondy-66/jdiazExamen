@@ -10,7 +10,7 @@ public partial class Resumen : ContentPage
     public string Cuidad { get; }
     public string MontoInicial { get; }
     public string CuataMensual { get; }
-    public string TotalPayment { get; }
+    public string PagoTotal{ get; }
     public Resumen()
 	{
 		InitializeComponent();
